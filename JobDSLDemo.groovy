@@ -1,6 +1,6 @@
 folder('FreestyleJob')
 folder('quidryan')
-folder('variable')
+folder('Variable')
 folder('Loops')
 folder('Pipeline')
 
@@ -30,7 +30,7 @@ branches.each {
 }
 
 // Variables
-def jobName = 'variable/example'
+def jobName = 'Variable/example'
 
 job(jobName) {
 
@@ -100,6 +100,22 @@ pipelineJob('Pipeline/Eric') {
             scm {
                 github('ericlong/JobDSLDemo')
             }
+        }
+    }
+}
+
+//MultiBranch
+
+multibranchPipelineJob('pipeline-as-code-demo'){
+    branchSources {
+        git {
+            repoOwner('kishorebhatia')
+            repository('pipeline-as-code-demo')
+        }
+    }
+    orphanedItemStrategy {
+        discardOldItems {
+            numToKeep(20)
         }
     }
 }
