@@ -58,7 +58,7 @@ pipelineJob('Pipeline/DSL-Pipeline') {
     definition {
         cpsScm {
             scm {
-                git('https://github.com/jenkins-inc/borat.git')
+                github('https://github.com/jenkins-inc/borat.git')
             }
         }
     }
