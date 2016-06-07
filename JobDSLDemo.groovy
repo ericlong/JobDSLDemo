@@ -1,4 +1,10 @@
-job('DSL-Tutorial-1-Test') {
+folder('FreestyleJob')
+folder('quidryan')
+folder('variable')
+folder('Loops')
+folder('Pipeline')
+
+job('FreestyleJob/DSL-Tutorial-1-Test') {
     scm {
         git('git://github.com/jgritman/aws-sdk-test.git')
     }
@@ -12,7 +18,7 @@ def branchApi = new URL("https://api.github.com/repos/${project}/branches")
 def branches = new groovy.json.JsonSlurper().parse(branchApi.newReader())
 branches.each {
     def branchName = it.name
-    def jobName = "${project}-${branchName}".replaceAll('/','-')
+    def jobName = "${project}-${branchName}".replaceAll('-')
     job(jobName) {
         scm {
             git("git://github.com/${project}.git", branchName)
@@ -24,7 +30,7 @@ branches.each {
 }
 
 // Variables
-def jobName = 'example'
+def jobName = 'variable/example'
 
 job(jobName) {
 
@@ -33,7 +39,7 @@ job(jobName) {
 // Loops
 def giturl = 'https://github.com/quidryan/aws-sdk-test.git'
 for(i in 0..10){
-  job("DSL-Tutorial-1-Test-${i}") {
+  job("Loops/DSL-Tutorial-1-Test-${i}") {
     scm {
       git(giturl)
     }
@@ -48,7 +54,7 @@ for(i in 0..10){
 
 // pipeline job
 
-pipelineJob('DSL-Pipeline') {
+pipelineJob('Pipeline/DSL-Pipeline') {
     definition {
         cpsScm {
             scm {
