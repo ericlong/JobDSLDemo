@@ -53,7 +53,7 @@ pipelineJob('DSL-Pipeline') {
         cpsScm {
             scm {
                 git('https://github.com/jenkins-inc/borat.git'){
-                    createTag(boolean createTag = false)
+                    createTag()
                 }
             }
         }
