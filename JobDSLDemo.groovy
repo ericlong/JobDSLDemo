@@ -106,7 +106,7 @@ pipelineJob('Pipeline/Eric') {
 
 //MultiBranch
 
-multibranchPipelineJob('pipeline-as-code-demo'){
+multibranchPipelineJob('Multibranch'){
     branchSources {
         github {
             repoOwner('kishorebhatia')
