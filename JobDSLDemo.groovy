@@ -83,3 +83,14 @@ pipelineJob('Pipeline/CloudBeers') {
         }
     }
 }
+
+jenkinsci/simple-build-for-pipeline-plugin
+pipelineJob('Pipeline/SimpleBuild') {
+    definition {
+        cpsScm {
+            scm {
+                github('jenkinsci/simple-build-for-pipeline-plugin')
+            }
+        }
+    }
+}
