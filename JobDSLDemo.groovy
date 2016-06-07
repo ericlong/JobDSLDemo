@@ -54,7 +54,7 @@ for(i in 0..10){
 
 // pipeline job
 
-pipelineJob('Pipeline/DSL-Pipeline') {
+pipelineJob('Pipeline/Borat') {
     definition {
         cpsScm {
             scm {
@@ -63,3 +63,14 @@ pipelineJob('Pipeline/DSL-Pipeline') {
         }
     }
 }
+
+pipelineJob('Pipeline/securitay') {
+    definition {
+        cpsScm {
+            scm {
+                github('jenkins-inc/securitay')
+            }
+        }
+    }
+}
+
