@@ -93,3 +93,13 @@ pipelineJob('Pipeline/SimpleBuild') {
         }
     }
 }
+
+pipelineJob('Pipeline/Eric') {
+    definition {
+        cpsScm {
+            scm {
+                github('ericlong/JobDSLDemo')
+            }
+        }
+    }
+}
