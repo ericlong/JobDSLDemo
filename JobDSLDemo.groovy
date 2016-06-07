@@ -74,3 +74,12 @@ pipelineJob('Pipeline/securitay') {
     }
 }
 
+pipelineJob('Pipeline/CloudBeers') {
+    definition {
+        cpsScm {
+            scm {
+                github('cloudbeers/multibranch-demo')
+            }
+        }
+    }
+}
