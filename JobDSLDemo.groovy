@@ -48,7 +48,7 @@ for(i in 0..10){
 
 // pipeline job
 
-workflowJob('DSL-Pipeline') {
+pipelineJob('DSL-Pipeline') {
     definition {
         cpsScm {
             scm {
