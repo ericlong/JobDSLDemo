@@ -104,6 +104,28 @@ pipelineJob('Pipeline/Eric') {
     }
 }
 
+//Reuse job definitions
+
+[
+    [folder: 'FreestyleJob', jobname: 'Reused1', repo: 'ericlong/JobDSLDemo'],
+    [folder: 'quidryan', jobname: 'Reused2', repo: 'ericlong/JobDSLDemo'],
+    [folder: 'Variable', jobname: 'Reused3', repo: 'ericlong/JobDSLDemo'],
+    [folder: 'Loops', jobname: 'Reused4', repo: 'ericlong/JobDSLDemo'],
+    [folder: 'Pipeline', jobname: 'Reused5', repo: 'ericlong/JobDSLDemo'],
+].each { Map config ->
+  
+  pipelineJob("${config.folder}/${config.jobname}") {
+        definition {
+            cpsScm {
+                scm {
+                  github(config.repo)
+                }
+            }
+        }
+    }
+}
+
+
 //MultiBranch
 
 multibranchPipelineJob('Multibranch'){
