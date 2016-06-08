@@ -1,3 +1,5 @@
+/*
+
 folder('FreestyleJob')
 folder('quidryan')
 folder('Variable')
@@ -12,8 +14,6 @@ job('FreestyleJob/DSL-Tutorial-1-Test') {
         maven('-e clean test')
     }
 }
-
-/*
 
 def project = 'quidryan/aws-sdk-test'
 def branchApi = new URL("https://api.github.com/repos/${project}/branches")
