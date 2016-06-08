@@ -1,4 +1,4 @@
-
+/*
 
 folder('FreestyleJob')
 folder('quidryan')
@@ -145,3 +145,4 @@ multibranchPipelineJob('Multibranch'){
     }
 }
 
+*/
