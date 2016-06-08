@@ -1,4 +1,4 @@
-/*
+
 
 folder('FreestyleJob')
 folder('quidryan')
@@ -15,6 +15,7 @@ job('FreestyleJob/DSL-Tutorial-1-Test') {
     }
 }
 
+/*
 def project = 'quidryan/aws-sdk-test'
 def branchApi = new URL("https://api.github.com/repos/${project}/branches")
 def branches = new groovy.json.JsonSlurper().parse(branchApi.newReader())
