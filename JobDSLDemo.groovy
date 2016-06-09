@@ -1,4 +1,3 @@
-/*
 
 folder('FreestyleJob')
 folder('quidryan')
@@ -114,7 +113,7 @@ pipelineJob('Pipeline/Eric') {
     [folder: 'quidryan', jobname: 'Reused2', repo: 'ericlong/JobDSLDemo'],
     [folder: 'Variable', jobname: 'Reused3', repo: 'ericlong/JobDSLDemo'],
     [folder: 'Loops', jobname: 'Reused4', repo: 'ericlong/JobDSLDemo'],
-    [folder: 'Pipeline', jobname: 'Reused5', repo: 'ericlong/JobDSLDemo'],
+    [folder: 'Pipeline', jobname: 'Reused5', repo: 'ericlong/JobDSLDemo']
 ].each { Map config ->
   
   pipelineJob("${config.folder}/${config.jobname}") {
@@ -145,4 +144,4 @@ multibranchPipelineJob('Multibranch'){
     }
 }
 
-*/
+
